@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../viewmodels/task_view_model.dart';
 import 'task_form_view.dart';
-
 import '../widgets/task_card.dart';
 
 class HomeView extends StatelessWidget {
@@ -12,15 +11,7 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('ToDoList'),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.search),
-            onPressed: () {
-              // Add search functionality
-            },
-          ),
-        ],
+        title: const Text('ToDoList', style: TextStyle(fontWeight: FontWeight.bold)),
       ),
       body: Obx(() {
         return ListView.builder(
@@ -34,7 +25,8 @@ class HomeView extends StatelessWidget {
         onPressed: () {
           Get.to(TaskFormView());
         },
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add,color: Colors.white,),
+        backgroundColor: Colors.black,
       ),
     );
   }
